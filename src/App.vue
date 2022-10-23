@@ -1,44 +1,44 @@
 <template>
-	<div class="app">
-		<post-form @create="createPost" />
-		<post-list :posts="posts" />
-	</div>
+  <div class="app">
+    <post-form @create="createPost" />
+    <post-list :posts="posts" />
+  </div>
 </template>
 
 <script>
-import PostForm from './components/PostForm';
-import PostList from '@/components/PostList';
+import PostForm from "./components/PostForm";
+import PostList from "@/components/PostList";
 
 export default {
-	components: {
-		PostList,
-		PostForm,
-	},
-	data() {
-		return {
-			posts: [
-				{ id: 1, title: 'JavaScript', body: 'Описание' },
-				{ id: 2, title: 'JavaScript 2', body: 'Описание 2' },
-				{ id: 3, title: 'JavaScript 3', body: 'Описание 3' },
-			],
-		};
-	},
-	methods: {
-		createPost(post) {
-			this.posts.push(post);
-		},
-	},
+  components: {
+    PostList,
+    PostForm,
+  },
+  data() {
+    return {
+      posts: [
+        { id: 1, title: "JavaScript", body: "Описание" },
+        { id: 2, title: "JavaScript 2", body: "Описание 2" },
+        { id: 3, title: "JavaScript 3", body: "Описание 3" },
+      ],
+    };
+  },
+  methods: {
+    createPost(post) {
+      this.posts.push(post);
+    },
+  },
 };
 </script>
 
 <style>
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .app {
-	padding: 20px;
+  padding: 20px;
 }
 </style>
