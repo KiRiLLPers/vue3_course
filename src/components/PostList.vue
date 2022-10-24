@@ -1,7 +1,12 @@
 <template lang="">
 	<div>
 		<h3>Список пользователей</h3>
-		<post-item v-for="post in posts" :post="post" :key="post.id" />
+		<post-item
+			v-for="post in posts"
+			:post="post"
+			:key="post.id"
+			@remove="removeEmit"
+		/>
 	</div>
 </template>
 <script>
@@ -14,7 +19,11 @@ export default {
 			required: true,
 		},
 	},
+	methods: {
+		removeEmit(post) {
+			return $emit('remove', post);
+		},
+	},
 };
 </script>
-<style scoped>
-</style>
+<style scoped></style>

@@ -1,5 +1,13 @@
-import { createApp } from "vue";
-import App from "./App.vue";
+import { createApp } from 'vue';
 // import router from './router';
 // import store from './store';
-createApp(App).mount("#app");
+import App from './App.vue';
+import components from '@/components/UI';
+
+const app = createApp(App);
+
+components.forEach((component) => {
+	app.component(component.name, component);
+});
+
+app.mount('#app');
